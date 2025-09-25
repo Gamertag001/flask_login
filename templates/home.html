@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Bienvenido</h1>
+    {% if current_user.is_authenticated %}
+        <p>Hola {{ current_user.username }}</p>
+    {% else %}
+        <p>Eres invitado. <a href="{{ url_for('login') }}">Inicia sesión</a></p>
+    {% endif %}
+{% endblock %}
